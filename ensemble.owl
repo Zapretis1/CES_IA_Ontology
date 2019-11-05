@@ -1,0 +1,2059 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/musical_instruments.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/musical_instruments.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ensemble="http://www.semanticweb.org/ontologies/ensemble.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl">
+        <owl:versionIRI rdf:resource="urn:absolute:1.0.0"/>
+        <rdfs:comment>A musical ensemble ontology that describes various ensembles based on instrument classifcation, sounds and types of conducting means  
+https://en.wikipedia.org/wiki/Musical_ensemble  https://en.wikipedia.org/wiki/Musical_instrument_classification</rdfs:comment>
+        <rdfs:label>Musical Ensemble</rdfs:label>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#hasCountryOfOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#hasCountryOfOrigin"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#isInstrumentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#hasLeader -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#hasLeader">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasPart"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#isLeaderOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleLeader"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LoudnessValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#hasPart">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#isInstrumentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#isInstrumentOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#isLeaderOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#isLeaderOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleLeader"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#isPartOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#hasConcertValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#hasConcertValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#AccordionInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#AccordionInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#FreeReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#HarmonicaInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#AerophoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#AerophoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#AkiloneEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#AkiloneEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NamedEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#AnneSophieMutterEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#AnneSophieMutterEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NamedEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#BagpipeInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BagpipeInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#BassoonInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BassoonInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#BazookaInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BazookaInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#SlideInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#BiologicalComputingInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BiologicalComputingInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#QuintephoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#BrassInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BrassInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#AerophoneInstrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#WoodwindInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#BrassQuintetEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BrassQuintetEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuintetEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#HornInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#TromboneInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#TrumpetInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#TubaInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HornInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TromboneInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TrumpetInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TubaInstrument"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#BugleInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BugleInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#NaturalInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LuteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ChalumeauInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ChalumeauInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#SingleReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ChamberEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ChamberEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ChordophoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ChordophoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#GaiaphoneInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#SingleReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetQuintetEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetQuintetEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuintetEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ClosedFluteInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClosedFluteInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#FluteInstrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#OpenFluteInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ConcertoEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ConcertoEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#CornettInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CornettInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#KeyedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#SerpentInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Country -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Country">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#England"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#France"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Germany"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LatinAmerica"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#CylindricalDrumInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CylindricalDrumInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#MembraphoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#DoubleBassInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleBassInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LuteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#DoubleReedInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleReedInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ReedInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#DuetEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#DuetEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLeader"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#MemberLeader"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ElectroEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ElectroEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ElectrophoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ElectrophoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#QuintephoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#EnglishHornInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnglishHornInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLeader"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleLeader"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasConcertValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleLeader -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleLeader"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#FluteInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#FluteInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#WoodwindInstrument"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ReedInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#FreeReedInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#FreeReedInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ReedInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#GaiaphoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#GaiaphoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#GobletDrumInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#GobletDrumInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#MembraphoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#GuqinInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#GuqinInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ZitherInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#HarmonicaInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HarmonicaInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#FreeReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#HarpInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HarpInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ChordophoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#HarpsichordInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HarpsichordInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ZitherInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#HighlyPopularEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HighlyPopularEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasConcertValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#HornInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HornInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ValvedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#HydraulophoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HydraulophoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#IdiophoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#IdiophoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#GaiaphoneInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#JazzEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#JazzEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#KettleDrumInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#KettleDrumInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#MembraphoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#KeyedInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#KeyedInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#BrassInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#LosAdolescentesEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LosAdolescentesEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NamedEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#CylindricalDrumInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleBassInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#MaracasInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#TransverseFluteInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#WoodBlockInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#LosVanVanEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LosVanVanEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NamedEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleBassInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#TransverseFluteInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#TromboneInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#WoodBlockInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Loud -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Loud">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LoudnessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#LoudEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LoudEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#NonLoudEnsemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#LoudnessValuePartition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LoudnessValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#LowPopularEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LowPopularEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasConcertValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#LuteInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LuteInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ChordophoneInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#MaracasInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#MaracasInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#IdiophoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#WoodBlockInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#MechanophoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#MechanophoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#QuintephoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Medium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Medium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LoudnessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#MemberLeader -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#MemberLeader">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleLeader"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#SeparateLeader"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#MembraphoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#MembraphoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#GaiaphoneInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#NamedEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NamedEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#NaturalInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NaturalInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#BrassInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#NeuralNetworkInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NeuralNetworkInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#QuintephoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#NonLoudEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NonLoudEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LoudEnsemble"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#OboeInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OboeInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#OcarinaInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OcarinaInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClosedFluteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#OpenFluteInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OpenFluteInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#FluteInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#OptiphoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OptiphoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#QuintephoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#OrganPipeInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OrganPipeInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClosedFluteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#PanPipeInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PanPipeInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#OpenFluteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#PianoInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PianoInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ZitherInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#PianoQuintetEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PianoQuintetEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuintetEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PianoInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#PianoInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>A piano quintet is a string quartet and a piano.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#PiccoloInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PiccoloInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#OpenFluteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#PlasmaphoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PlasmaphoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#PopEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PopEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ProbeInconsistentInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ProbeInconsistentInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#HydraulophoneInstrument"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#PlasmaphoneInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#QuartetEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuartetEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#QuintephoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuintephoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#QuintetEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuintetEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#RecorderInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#RecorderInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClosedFluteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ReedInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ReedInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#WoodwindInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ReedbasedInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ReedbasedInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#HydraulophoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ReedlessInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ReedlessInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ReedlessInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#HydraulophoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#RockEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#RockEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#SackbutInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SackbutInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#SlideInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#SalsaEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SalsaEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#WoodBlockInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#SaxophoneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SaxophoneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#SingleReedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#SeparateLeader -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SeparateLeader">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleLeader"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#SerpentInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SerpentInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#KeyedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ShakuhachiInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ShakuhachiInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#OpenFluteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#SingleReedInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SingleReedInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ReedInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#SlideInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SlideInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#BrassInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Soft -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Soft">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LoudnessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#StringEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#StringEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ChordophoneInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ChordophoneInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#StringQuartetEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#StringQuartetEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuartetEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#WindQuartet"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#SymphonicOrchestraEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SymphonicOrchestraEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#TeslaKeyInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TeslaKeyInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#PlasmaphoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#TransverseFluteInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TransverseFluteInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#OpenFluteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#TrioEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TrioEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#TromboneInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TromboneInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#SlideInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#TrumpetInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TrumpetInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ValvedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#TubaInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TubaInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ValvedInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#UnclosedEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#UnclosedEnsemble">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#NamedEnsemble"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ValuePartition"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ValvedInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ValvedInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#BrassInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LuteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LuteInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#WindQuartet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#WindQuartet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#QuartetEnsemble"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#WindQuintetEnsemble -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#WindQuintetEnsemble">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuintetEnsemble"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BassoonInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OboeInstrument"/>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnglishHornInstrument"/>
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HornInstrument"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                    <owl:Class>
+                                        <owl:unionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PiccoloInstrument"/>
+                                            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TransverseFluteInstrument"/>
+                                        </owl:unionOf>
+                                    </owl:Class>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#BassoonInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#OboeInstrument"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnglishHornInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HornInstrument"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:onClass>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasInstrument"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PiccoloInstrument"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TransverseFluteInstrument"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:onClass>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#WoodBlockInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#WoodBlockInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#IdiophoneInstrument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasLoudness"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#hasCountryOfOrigin"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#LatinAmerica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#WoodwindInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#WoodwindInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#AerophoneInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#ZitherInstrument -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ZitherInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ChordophoneInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#England -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#England">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quartet263 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quartet263">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#StringQuartetEnsemble"/>
+        <ensemble:hasConcertValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">263</ensemble:hasConcertValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quartet800 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quartet800">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#StringQuartetEnsemble"/>
+        <ensemble:hasConcertValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</ensemble:hasConcertValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quintet145 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quintet145">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetQuintetEnsemble"/>
+        <ensemble:hasConcertValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">145</ensemble:hasConcertValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quintet222 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quintet222">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#PianoQuintetEnsemble"/>
+        <ensemble:hasConcertValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">222</ensemble:hasConcertValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quintet723 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Example-Quintet723">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#BrassQuintetEnsemble"/>
+        <ensemble:hasConcertValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">723</ensemble:hasConcertValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#France -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#France">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#Germany -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Germany">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/ensemble.owl#LatinAmerica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LatinAmerica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/ensemble.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#AerophoneInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#GaiaphoneInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HydraulophoneInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PlasmaphoneInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuintephoneInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#AkiloneEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#AnneSophieMutterEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LosAdolescentesEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LosVanVanEnsemble"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BagpipeInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleReedInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#FreeReedInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SingleReedInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BassoonInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnglishHornInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OboeInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BazookaInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SackbutInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TromboneInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BiologicalComputingInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ElectrophoneInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#MechanophoneInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NeuralNetworkInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OptiphoneInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#BrassQuintetEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetQuintetEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PianoQuintetEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#WindQuintetEnsemble"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CelloInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#DoubleBassInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolaInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ViolinInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ChalumeauInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClarinetInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SaxophoneInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ChamberEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ConcertoEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#DuetEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuartetEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#QuintetEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SymphonicOrchestraEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TrioEnsemble"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ChordophoneInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#IdiophoneInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#MembraphoneInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ClassicalEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ElectroEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#JazzEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PopEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#RockEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SalsaEnsemble"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#CylindricalDrumInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#GobletDrumInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#KettleDrumInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ElectroEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#JazzEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PopEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#RockEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SalsaEnsemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#StringEnsemble"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Ensemble"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#EnsembleLeader"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#GuqinInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HarpsichordInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PianoInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HarpInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#LuteInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ZitherInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#HornInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TrumpetInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TubaInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#KeyedInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#NaturalInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#SlideInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ValvedInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Loud"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Medium"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#Soft"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OcarinaInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#OrganPipeInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#RecorderInstrument"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PanPipeInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#PiccoloInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#ShakuhachiInstrument"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/ontologies/ensemble.owl#TransverseFluteInstrument"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
